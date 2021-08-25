@@ -4,13 +4,13 @@ describe ( 'My 2nd Test Suite', function(){
         cy.visit("https://ultimateqa.com/simple-html-elements-for-automation/");
         cy.get('#et_pb_contact_name_0').type('Dona');
         cy.get('#et_pb_contact_email_0').type('dona@saputra.com');
-        cy.get('.et_pb_contact_submit').click();
+        cy.get('.et_pb_contact_submit').click()
         cy.get('[value="male"]').check();
-        cy.get('.et_pb_blurb_7 > .et_pb_blurb_content > .et_pb_blurb_container > .et_pb_blurb_description > form').click();
+        cy.get('[value="Bike"]').click();
         cy.get('select').select('Audi')
+        cy.get('.et_pb_cta_0 > .et_pb_button_wrapper > .et_pb_button').click()
+        cy.get('.entry-title').should('contain','Button success')
 
-        // cy.contains('Daftar').click()
-        // cy.get('.bl-text-field__inner')
     })
 
 
@@ -19,3 +19,4 @@ describe ( 'My 2nd Test Suite', function(){
     })
 
 })
+
