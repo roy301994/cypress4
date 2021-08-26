@@ -19,9 +19,12 @@ describe('Case Study 3',() => {
    it('Registrasi Website',() => {
        cy.visit('https://www.demoblaze.com/index.html')
        cy.get('#signin2').click()
+
+   })
+   it('Login Website',() => {
+       cy.visit('https://www.demoblaze.com/index.html')
        
    })
-
 
 
 })
