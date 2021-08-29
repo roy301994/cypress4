@@ -24,9 +24,27 @@
 // -- This will overwrite an existing command --
 
 
-
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.add('login', () => {
-    cy.visit('https://bukalapak.com');
-    cy.contains('Daftar').click();
+// Cypress.Commands.add('login', () => {
+//     cy.visit('https://bukalapak.com');
+//     cy.contains('Daftar').click();
+// })
+
+//Day 4
+Cypress.Commands.add('bukaurl',()=>{
+    cy.visit('https://www.demoblaze.com/index.html')
 })
+
+
+Cypress.Commands.add('login',()=>{
+    cy.get('#login2').click()
+    cy.get('#loginusername').type('dona').should('have.value','dona')
+    cy.get('#loginpassword').type('123').should('have.value','123')
+    cy.get('#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click()
+    cy.contains('dona').should('exist')
+})
+
+// Cypress.Commands.add('daftar',()=>{
+//     cy.contains('Daftar').click()
+
+// })
