@@ -6,23 +6,39 @@ describe('All Test Case', function(){
 
     it('pembelian', function(){
         cy.login()
+        cy.get(':nth-child(7) > .card > .card-block > .card-title > .hrefch').click()
+        cy.get('.col-sm-12 > .btn').click()
+        cy.go('back')
+        cy.go('back')
+
+        cy.contains('Laptops').click()
+        cy.get(':nth-child(4) > .card > .card-block > .card-title > .hrefch').click()
+        cy.go('back')
+        cy.go('back')
+
+        cy.contains('Monitors').click()
         cy.get(':nth-child(1) > .card > .card-block > .card-title > .hrefch').click()
-        cy.get('.col-sm-12 > .btn').click()
-
         cy.go('back')
         cy.go('back')
 
-        cy.get(':nth-child(2) > .card > .card-block > .card-title > .hrefch').click()
-        cy.get('.col-sm-12 > .btn').click()
+        //cy.get('[onclick="byCat('notebook')"]').click()
+        // cy.get(':nth-child(1) > .card > .card-block > .card-title > .hrefch').click()
+        // cy.get('.col-sm-12 > .btn').click()
 
-        cy.go('back')
-        cy.go('back')
+        // cy.go('back')
+        // cy.go('back')
 
-        cy.get(':nth-child(3) > .card > .card-block > .card-title > .hrefch').click()
-        cy.get('.col-sm-12 > .btn').click()
+        // cy.get(':nth-child(2) > .card > .card-block > .card-title > .hrefch').click()
+        // cy.get('.col-sm-12 > .btn').click()
 
-        cy.go('back')
-        cy.go('back')
+        // cy.go('back')
+        // cy.go('back')
+
+        // cy.get(':nth-child(3) > .card > .card-block > .card-title > .hrefch').click()
+        // cy.get('.col-sm-12 > .btn').click()
+
+        // cy.go('back')
+        // cy.go('back')
 
         cy.get('#cartur').click()
         cy.get('.col-lg-1 > .btn').click()
@@ -35,6 +51,7 @@ describe('All Test Case', function(){
         cy.wait(1000)
         cy.get('#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click()
         cy.contains('Thank you for your purchase!').should('exist')
+        cy.wait(1000)
         cy.get('.confirm').click()
 
     })

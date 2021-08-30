@@ -38,7 +38,9 @@ Cypress.Commands.add('bukaurl',()=>{
 
 Cypress.Commands.add('login',()=>{
     cy.get('#login2').click()
-    cy.get('#loginusername').type('dona').should('have.value','dona')
+    cy.wait(1000)
+    cy.get('#loginusername').type('dona').should('have.value','dona',{force:true})
+    cy.wait(1000)
     cy.get('#loginpassword').type('123').should('have.value','123')
     cy.get('#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click()
     cy.contains('dona').should('exist')
