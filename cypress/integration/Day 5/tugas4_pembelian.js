@@ -11,7 +11,8 @@ describe('All Test Case', function(){
         cy.go('back')
         cy.go('back')
 
-        cy.contains('Laptops').click()
+        // cy.contains('Laptops').click()
+        cy.get(`[onclick="byCat('notebook')"]`).click()
         cy.get(':nth-child(4) > .card > .card-block > .card-title > .hrefch').click()
         cy.go('back')
         cy.go('back')

@@ -31,10 +31,17 @@
 // })
 
 //Day 4
+
+import 'cypress-file-upload';
+
+
 Cypress.Commands.add('bukaurl',()=>{
     cy.visit('https://www.demoblaze.com/index.html')
 })
 
+Cypress.Commands.add('openurl',()=>{
+    cy.visit('https://demoqa.com/automation-practice-form')
+})
 
 Cypress.Commands.add('login',()=>{
     cy.get('#login2').click()
